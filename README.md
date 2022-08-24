@@ -21,7 +21,7 @@ Where `-S` indicates the source directory and `-B` indicates the build directory
 Where `-C` indicates the compilation directory
 
 
-### Extras
+## Extras
 
 I usually use neovim as my text editor and this project is no exception. In my neovim configuration, I'm using lsp-config so for the lsp server could read the syntaxis of this code correctly I need to run the following command
 
