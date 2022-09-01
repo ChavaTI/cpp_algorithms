@@ -24,3 +24,5 @@ if(NOT EXISTS "${PROJECT_SOURCE_DIR}/3thparty/gtest/CMakeLists.txt")
 endif()
 
 add_subdirectory(src)
+add_subdirectory(3thparty/gtest)
+add_subdirectory(tests)
