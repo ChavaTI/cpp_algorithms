@@ -26,10 +26,3 @@ endif()
 add_subdirectory(src)
 add_subdirectory(3thparty/gtest)
 add_subdirectory(tests)
-
-
-set(OPERATOR_DIR src/operators)
-
-add_executable(${PROJECT_NAME} src/main.cpp)
-target_include_directories(${PROJECT_NAME} PUBLIC ${OPERATOR_DIR}/sum)
-target_link_libraries(${PROJECT_NAME} sum)
