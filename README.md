@@ -23,10 +23,9 @@ Where `-C` indicates the compilation directory
 
 ## Extras
 
-I usually use neovim as my text editor and this project is no exception. In my neovim configuration, I'm using lsp-config so for the lsp server could read the syntaxis of this code correctly I need to run the following command
+I usually use neovim as my text editor and this project is no exception. In my neovim configuration, I'm using lsp-config and the ccls lsp server, [the documentations](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ccls) of lsp-config/ccls mentions that ccls relies on a JSON compilation database.
+To generate this database and be sure that the lsp server will work fine, It's necessary to create the database with the following command.
 
 `cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .`
 
-On the build directory.
-
-This command gonna create a json file in the build directory, and the lsp server could read the syntaxis correctly
+you should run this command on the build directory
