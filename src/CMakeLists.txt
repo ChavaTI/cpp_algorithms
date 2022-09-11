@@ -8,6 +8,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
   ${OPERATOR_DIR}/subtraction 
   ${OPERATOR_DIR}/multiplication
   ${OPERATOR_DIR}/division
+  ${OPERATOR_DIR}/modulus
   )
 
 target_link_libraries(${PROJECT_NAME} 
@@ -15,6 +16,7 @@ target_link_libraries(${PROJECT_NAME}
   subtraction 
   multiplication
   division
+  modulus
   )
 
 add_subdirectory(operators)

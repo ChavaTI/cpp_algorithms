@@ -6,6 +6,7 @@ add_executable(${TEST_BINARY} main.cpp
   operators/subtraction_test.cpp 
   operators/multiplication_test.cpp
   operators/division_test.cpp 
+  operators/modulus_test.cpp 
   )
 
 add_test(NAME ${TEST_BINARY} COMMAND ${TEST_BINARY})
@@ -15,11 +16,14 @@ target_include_directories(${TEST_BINARY} PUBLIC
   ${OPERATOR_DIR}/subtraction 
   ${OPERATOR_DIR}/multiplication
   ${OPERATOR_DIR}/division
+  ${OPERATOR_DIR}/modulus
   )
 target_link_libraries(${TEST_BINARY} 
   sum 
   subtraction 
   multiplication
-  division)
+  division
+  modulus
+  )
 
 target_link_libraries(${TEST_BINARY} gtest)
