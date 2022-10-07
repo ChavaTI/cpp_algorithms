@@ -27,7 +27,7 @@ jobs:
     - name: Git submodules update
 
       run: |
-        git submodules update --remote --recursive
+        git submodule update --remote --recursive
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
