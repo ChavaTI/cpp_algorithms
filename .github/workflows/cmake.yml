@@ -27,7 +27,6 @@ jobs:
     - name: Git submodules update
 
       run: |
-        git config pull.rebase false
         git pull --recurse-submodules origin $(git rev-parse --abbrev-ref HEAD)
 
     - name: Configure CMake
