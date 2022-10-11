@@ -21,7 +21,7 @@ if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
     endif()
 endif()
 
-if(NOT EXISTS "${PROJECT_SOURCE_DIR}/3thparty/gtest/CMakeLists.txt")
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/3thparty/gtest/CMakeLists.txt" AND NOT ${CMAKE_BUILD_TYPE} MATCHES "Release")
     message(FATAL_ERROR "The gtest submodules was not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
 endif()
 
