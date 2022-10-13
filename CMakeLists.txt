@@ -10,7 +10,7 @@ find_package(Git QUIET)
 if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
 # Update submodules as needed
     option(GIT_SUBMODULE "Check submodules during build" ON)
-    if(GIT_SUBMODULE)
+    if(GIT_SUBMODULE AND NOT ${CMAKE_BUILD_TYPE} MATCHES "Release")
         message(STATUS "Submodule update")
         execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --init --recursive
                         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
@@ -21,7 +21,7 @@ if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
     endif()
 endif()
 
-if(NOT EXISTS "${PROJECT_SOURCE_DIR}/3thparty/gtest/CMakeLists.txt")
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/3thparty/gtest/CMakeLists.txt" AND NOT ${CMAKE_BUILD_TYPE} MATCHES "Release")
     message(FATAL_ERROR "The gtest submodules was not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
 endif()
 
