@@ -1,6 +1,7 @@
 # build the project
 set(OPERATOR_DIR operators)
 set(SORTING_DIR sorting)
+set(DATA_STRUCTURES_DIR data_structures)
 
 add_executable(${PROJECT_NAME} main.cpp)
 target_include_directories(
@@ -12,6 +13,7 @@ target_include_directories(
   ${OPERATOR_DIR}/division
   ${OPERATOR_DIR}/modulus
   ${SORTING_DIR}/bubble
+  ${DATA_STRUCTURES_DIR}/binary_tree
 )
 
 target_link_libraries(
@@ -22,7 +24,9 @@ target_link_libraries(
   division
   modulus
   bubble
+  binary_tree
 )
 
 add_subdirectory(${OPERATOR_DIR})
 add_subdirectory(${SORTING_DIR})
+add_subdirectory(${DATA_STRUCTURES_DIR})
