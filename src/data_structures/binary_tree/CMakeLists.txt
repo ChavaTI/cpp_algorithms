@@ -1,1 +1,1 @@
-add_library(binary_tree binary_tree.cpp binary_tree.h)
+add_library(Binary_tree Binary_tree.cpp Binary_tree.h)

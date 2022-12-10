@@ -24,7 +24,7 @@ target_link_libraries(
   division
   modulus
   bubble
-  binary_tree
+  Binary_tree
 )
 
 add_subdirectory(${OPERATOR_DIR})

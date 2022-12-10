@@ -30,7 +30,7 @@ target_link_libraries(${TEST_BINARY}
   division
   modulus
   bubble
-  binary_tree
+  Binary_tree
   )
 
 target_link_libraries(${TEST_BINARY} gtest)
