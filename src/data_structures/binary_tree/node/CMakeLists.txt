@@ -1,1 +1,1 @@
-add_library(Node Node.cpp)
+add_library(node Node.cpp Node.h)

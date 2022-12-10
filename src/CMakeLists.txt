@@ -13,7 +13,9 @@ target_include_directories(
   ${OPERATOR_DIR}/division
   ${OPERATOR_DIR}/modulus
   ${SORTING_DIR}/bubble
+
   ${DATA_STRUCTURES_DIR}/binary_tree
+  ${DATA_STRUCTURES_DIR}/binary_tree/node
 )
 
 target_link_libraries(
@@ -25,8 +27,8 @@ target_link_libraries(
   modulus
   bubble
 
-  Binary_tree
-  Node
+  binary_tree
+  node
 )
 
 add_subdirectory(${OPERATOR_DIR})

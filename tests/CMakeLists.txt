@@ -21,7 +21,9 @@ target_include_directories(${TEST_BINARY} PUBLIC
   ${OPERATOR_DIR}/division
   ${OPERATOR_DIR}/modulus
   ${SORTING_DIR}/bubble
+
   ${DATA_STRUCTURES_DIR}/binary_tree
+  ${DATA_STRUCTURES_DIR}/binary_tree/node
   )
 target_link_libraries(${TEST_BINARY} 
   sum 
@@ -31,8 +33,8 @@ target_link_libraries(${TEST_BINARY}
   modulus
   bubble
 
-  Binary_tree
-  Node
+  binary_tree
+  node
   )
 
 target_link_libraries(${TEST_BINARY} gtest)
