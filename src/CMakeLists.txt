@@ -14,8 +14,8 @@ target_include_directories(
   ${OPERATOR_DIR}/modulus
   ${SORTING_DIR}/bubble
 
-  ${DATA_STRUCTURES_DIR}/binary_tree
-  ${DATA_STRUCTURES_DIR}/binary_tree/node
+  ${DATA_STRUCTURES_DIR}/binary_search_tree
+  ${DATA_STRUCTURES_DIR}/binary_search_tree/node
 )
 
 target_link_libraries(
@@ -27,7 +27,7 @@ target_link_libraries(
   modulus
   bubble
 
-  binary_tree
+  binary_search_tree
   node
 )
 
