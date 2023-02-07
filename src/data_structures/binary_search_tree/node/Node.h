@@ -11,8 +11,8 @@ public:
   Node(int value);
 
   void setData(int newValue);
-  void setLeft(int newNode);
-  void setRight(int newNode);
+  void setLeft(Node* left);
+  void setRight(Node* right);
 
   int getValue();
   Node *getLeft();

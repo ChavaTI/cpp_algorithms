@@ -10,8 +10,8 @@ TEST(node_test, structure_data) {
 
   Node *root = new Node(rootValue);
 
-  root->setLeft(leftValue);
-  root->setRight(rightValue);
+  root->setLeft(new Node(leftValue));
+  root->setRight(new Node(rightValue));
 
   EXPECT_EQ(rootValue, root->getValue());
   EXPECT_EQ(leftValue, root->getLeft()->getValue());

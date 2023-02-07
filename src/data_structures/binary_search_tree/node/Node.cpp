@@ -12,12 +12,12 @@ void Node::setData(int newValue) {
   data = newValue;
 }
 
-void Node::setLeft(int newNode) {
-  left = new Node(newNode);
+void Node::setLeft(Node* left) {
+  this->left = left;
 }
 
-void Node::setRight(int newNode) {
-  right = new Node(newNode);
+void Node::setRight(Node* right) {
+  this->right = right;
 }
 
 int Node::getValue() {
