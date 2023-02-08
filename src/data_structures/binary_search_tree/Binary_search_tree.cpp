@@ -2,9 +2,10 @@
 #include "node/Node.h"
 #include "stdio.h"
 
-Binary_search_tree::Binary_search_tree(int rootValue) {
+Binary_search_tree::Binary_search_tree() { }
 
-  root = new Node(rootValue);
+Binary_search_tree::Binary_search_tree(int rootValue) {
+  this->root = new Node(rootValue);
 }
 
 void Binary_search_tree::setRoot(Node *newRoot) { this->root = newRoot; }

@@ -11,6 +11,7 @@ add_executable(${TEST_BINARY} main.cpp
   operators/modulus_test.cpp 
   sorting/bubble_test.cpp 
   data_structures/binary_search_tree/node/node.cpp
+  data_structures/binary_search_tree/binary_search_tree.cpp
   )
 
 add_test(NAME ${TEST_BINARY} COMMAND ${TEST_BINARY})

@@ -8,6 +8,7 @@ private:
   Node *root;
 
 public:
+  Binary_search_tree();
   Binary_search_tree(int rootValue);
 
   void setRoot(Node* newRoot);
