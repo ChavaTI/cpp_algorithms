@@ -14,7 +14,7 @@ public:
   void setLeft(Node* left);
   void setRight(Node* right);
 
-  int getValue();
+  int getData();
   Node *getLeft();
   Node *getRight();
 };

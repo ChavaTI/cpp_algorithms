@@ -13,8 +13,8 @@ TEST(node_test, structure_data) {
   root->setLeft(new Node(leftValue));
   root->setRight(new Node(rightValue));
 
-  EXPECT_EQ(rootValue, root->getValue());
-  EXPECT_EQ(leftValue, root->getLeft()->getValue());
-  EXPECT_EQ(rightValue, root->getRight()->getValue());
+  EXPECT_EQ(rootValue, root->getData());
+  EXPECT_EQ(leftValue, root->getLeft()->getData());
+  EXPECT_EQ(rightValue, root->getRight()->getData());
 }
 } // namespace

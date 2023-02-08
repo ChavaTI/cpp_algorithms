@@ -20,7 +20,7 @@ void Node::setRight(Node* right) {
   this->right = right;
 }
 
-int Node::getValue() {
+int Node::getData() {
   return data;
 }
 
