@@ -7,13 +7,9 @@ Binary_search_tree::Binary_search_tree(int rootValue) {
   root = new Node(rootValue);
 }
 
-void Binary_search_tree::setRoot(Node *newRoot) {
-  this->root = newRoot;
-}
+void Binary_search_tree::setRoot(Node *newRoot) { this->root = newRoot; }
 
-Node* Binary_search_tree::getRoot() {
-  return this->root;
-}
+Node *Binary_search_tree::getRoot() { return this->root; }
 
 void Binary_search_tree::insertNode(int newValue) {
   Node *newNode = new Node(newValue);
