@@ -1,7 +1,7 @@
 # Algorithms created on C++
 
-![GitHub branch checks state](https://img.shields.io/github/checks-status/codeDude64/cpp_algorithms/master?label=Unit%20test%20on%20master)
-![GitHub branch checks state](https://img.shields.io/github/checks-status/codeDude64/cpp_algorithms/develop?label=Unit%20test%20on%20develop)
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/codeDude64/cpp_algorithms/unit_tests.yml?branch=master&label=Master%20Unit%20test&style=plastic)
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/codeDude64/cpp_algorithms/unit_tests.yml?branch=develop&label=Develop%20Unit%20test&style=plastic)
 
 My intention here is to review the basic Algorithms of computer science
 and learn C++, CMake, and any other c stuff that I need to learn.
