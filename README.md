@@ -1,6 +1,7 @@
 # Algorithms created on C++
 
-![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/codeDude64/cpp_algorithms/unit_test.yml?event=pull_request&label=Unit%20tests&logo=Unit%20tests)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/codeDude64/cpp_algorithms/master?label=Unit%20test%20on%20master)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/codeDude64/cpp_algorithms/develop?label=Unit%20test%20on%20develop)
 
 My intention here is to review the basic Algorithms of computer science
 and learn C++, CMake, and any other c stuff that I need to learn.
