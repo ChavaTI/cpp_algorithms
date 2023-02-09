@@ -1,5 +1,7 @@
 # Algorithms created on C++
 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/codeDude64/cpp_algorithms/unit_tests.yml?label=Unit%20test&style=plastic)
+
 My intention here is to review the basic Algorithms of computer science
 and learn C++, CMake, and any other c stuff that I need to learn.
 
