@@ -2,7 +2,7 @@
 #include "node/Node.h"
 #include "stdio.h"
 
-Binary_search_tree::Binary_search_tree() { }
+Binary_search_tree::Binary_search_tree() {}
 
 Binary_search_tree::Binary_search_tree(int rootValue) {
   this->root = new Node(rootValue);
@@ -37,5 +37,11 @@ void Binary_search_tree::insertNode(int newValue) {
         }
       }
     }
+  }
+}
+
+void Binary_search_tree::insertNodesFromArray(int *array, int length) {
+  for (int i = 0; i < length; i++) {
+    this->insertNode(array[i]);
   }
 }
