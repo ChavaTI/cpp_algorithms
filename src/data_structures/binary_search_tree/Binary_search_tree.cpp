@@ -40,9 +40,8 @@ void Binary_search_tree::insertNode(int newValue) {
   }
 }
 
-void Binary_search_tree::insertNodesFromArray(int *array) {
-  int length = (sizeof(array) / sizeof(array[0]));
-  for (int i = 0; i < length; i++)  {
+void Binary_search_tree::insertNodesFromArray(int *array, int length) {
+  for (int i = 0; i < length; i++) {
     this->insertNode(array[i]);
   }
 }
