@@ -38,7 +38,7 @@ TEST(bst, insert_by_array_function) {
 
   Binary_search_tree *bst = new Binary_search_tree();
 
-  bst->insertNodesByArray(array);
+  bst->insertNodesFromArray(array);
 
   EXPECT_EQ(bst->getRoot()->getData(), array[0]);
   EXPECT_EQ(bst->getRoot()->getLeft()->getData(), array[1]);

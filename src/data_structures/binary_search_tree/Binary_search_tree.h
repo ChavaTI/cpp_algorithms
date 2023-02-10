@@ -14,7 +14,7 @@ public:
   void setRoot(Node* newRoot);
   Node* getRoot();
   void insertNode(int newValue);
-  void insertNodesByArray(int *array);
+  void insertNodesFromArray(int *array);
   void removeNode();
   Node *search(int value);
   void preOrderTraverse();
