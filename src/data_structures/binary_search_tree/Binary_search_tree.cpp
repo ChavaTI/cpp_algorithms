@@ -45,3 +45,18 @@ void Binary_search_tree::insertNodesFromArray(int *array, int length) {
     this->insertNode(array[i]);
   }
 }
+
+int Binary_search_tree::getHeight() {
+  return this->calculateHeight(this->getRoot());
+}
+
+int Binary_search_tree::calculateHeight(Node *node) {
+  if (node == NULL) {
+    return 0;
+  }
+
+  int leftHeight = this->calculateHeight(node->getLeft());
+  int rightHeight = this->calculateHeight(node->getRight());
+
+  return (leftHeight > rightHeight) ? leftHeight + 1 : rightHeight + 1;
+}

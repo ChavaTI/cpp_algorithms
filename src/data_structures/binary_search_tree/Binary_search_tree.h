@@ -20,6 +20,8 @@ public:
   void preOrderTraverse();
   void inOrderTraverse();
   void postOrderTraverse();
+  int calculateHeight(Node *node);
+  int getHeight();
   void printTree();
   Node *getMaximumNode();
   Node *getMinimumNode();
