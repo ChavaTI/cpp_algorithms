@@ -6,6 +6,7 @@
 class Binary_search_tree {
 private:
   Node *root;
+  int calculateHeight(Node *node);
 
 public:
   Binary_search_tree();
@@ -20,7 +21,6 @@ public:
   void preOrderTraverse();
   void inOrderTraverse();
   void postOrderTraverse();
-  int calculateHeight(Node *node);
   int getHeight();
   void printTree();
   Node *getMaximumNode();
