@@ -63,4 +63,11 @@ TEST(bst, get_height_function) {
   EXPECT_EQ(height, expectedHeight);
 }
 
+TEST(bst, get_height_function_with_empty_tree) {
+  int expectedHeight = 0;
+  Binary_search_tree *bst = new Binary_search_tree();
+  int height = bst->getHeight();
+  EXPECT_EQ(height, expectedHeight);
+}
+
 } // namespace
