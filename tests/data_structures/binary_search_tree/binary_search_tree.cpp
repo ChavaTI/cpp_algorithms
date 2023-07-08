@@ -70,4 +70,6 @@ TEST(bst, get_height_function_with_empty_tree) {
   EXPECT_EQ(height, expectedHeight);
 }
 
+// TODO (codeDude): Add a test to test the print function
+
 } // namespace
