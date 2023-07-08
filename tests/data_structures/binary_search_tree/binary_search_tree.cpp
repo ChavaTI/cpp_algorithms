@@ -51,4 +51,25 @@ TEST(bst, insert_by_array_function) {
   EXPECT_EQ(bst->getRoot()->getRight()->getRight()->getData(), array[6]);
 }
 
+TEST(bst, get_height_function) {
+  int array[] = {50, 30, 70, 20, 40, 60, 80};
+  int expectedHeight = 3;
+  Binary_search_tree *bst = new Binary_search_tree();
+  int length = sizeof(array) / sizeof(array[0]);
+
+  bst->insertNodesFromArray(array, length);
+
+  int height = bst->getHeight();
+  EXPECT_EQ(height, expectedHeight);
+}
+
+TEST(bst, get_height_function_with_empty_tree) {
+  int expectedHeight = 0;
+  Binary_search_tree *bst = new Binary_search_tree();
+  int height = bst->getHeight();
+  EXPECT_EQ(height, expectedHeight);
+}
+
+// TODO (codeDude): Add a test to test the print function
+
 } // namespace
