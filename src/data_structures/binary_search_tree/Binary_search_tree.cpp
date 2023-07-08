@@ -1,6 +1,6 @@
 #include "Binary_search_tree.h"
 #include "node/Node.h"
-#include "stdio.h"
+#include <iostream>
 
 Binary_search_tree::Binary_search_tree() {}
 
@@ -59,4 +59,22 @@ int Binary_search_tree::calculateHeight(Node *node) {
   int rightHeight = this->calculateHeight(node->getRight());
 
   return (leftHeight > rightHeight) ? leftHeight + 1 : rightHeight + 1;
+}
+
+void Binary_search_tree::print() {
+  this->printTree(this->getRoot(), "", false);
+}
+
+void Binary_search_tree::printTree(Node *node, const std::string &prefix,
+                                   bool isLeft) {
+  if (node == NULL) {
+    return;
+  }
+
+  std::cout << prefix;
+  std::cout << (isLeft ? "├──" : "└──");
+  std::cout << node->getData() << std::endl;
+
+  this->printTree(node->getLeft(), prefix + (isLeft ? "│   " : "    "), true);
+  this->printTree(node->getRight(), prefix + (isLeft ? "│   " : "    "), false);
 }

@@ -1,6 +1,7 @@
 #ifndef BINARY_SEARCH_TREE
 #define BINARY_SEARCH_TREE
 
+#include <iostream>
 #include "node/Node.h"
 
 class Binary_search_tree {
@@ -22,7 +23,8 @@ public:
   void inOrderTraverse();
   void postOrderTraverse();
   int getHeight();
-  void printTree();
+  void printTree(Node* node, const std::string& prefix, bool isLeft);
+  void print();
   Node *getMaximumNode();
   Node *getMinimumNode();
   Node *getPredecesorNode(Node *node);
