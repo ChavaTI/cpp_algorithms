@@ -8,21 +8,21 @@ Binary_search_tree::Binary_search_tree(int rootValue) {
   this->root = new Node(rootValue);
 }
 
-void Binary_search_tree::setRoot(Node* node) { this->root = node; }
+void Binary_search_tree::setRoot(Node *node) { this->root = node; }
 
 Node *Binary_search_tree::getRoot() { return this->root; }
 
 void Binary_search_tree::insertNode(Node *node, int value) {
   if (value < node->getData()) {
-    if(node->getLeft() == NULL) {
-      Node* newNode = new Node(value);
+    if (node->getLeft() == NULL) {
+      Node *newNode = new Node(value);
       node->setLeft(newNode);
     } else {
       this->insertNode(node->getLeft(), value);
     }
-  } else {
-    if(node->getRight() == NULL) {
-      Node* newNode = new Node(value);
+  } else if (value > node->getData()) {
+    if (node->getRight() == NULL) {
+      Node *newNode = new Node(value);
       node->setRight(newNode);
     } else {
       this->insertNode(node->getRight(), value);
@@ -36,7 +36,6 @@ void Binary_search_tree::insert(int value) {
   } else {
     this->insertNode(this->getRoot(), value);
   }
-
 }
 
 void Binary_search_tree::insertNodesFromArray(int *array, int length) {
