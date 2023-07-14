@@ -13,14 +13,14 @@ TEST(bst, insert_function) {
   int thirdRightByRight = 8;
 
   Binary_search_tree *bst = new Binary_search_tree();
-  bst->insertNode(rootValue);
-  bst->insertNode(secondLeft);
-  bst->insertNode(secondRight);
+  bst->insert(rootValue);
+  bst->insert(secondLeft);
+  bst->insert(secondRight);
 
-  bst->insertNode(thirdLeftByLeft);
-  bst->insertNode(thirdRightByLeft);
-  bst->insertNode(thirdLeftByRight);
-  bst->insertNode(thirdRightByRight);
+  bst->insert(thirdLeftByLeft);
+  bst->insert(thirdRightByLeft);
+  bst->insert(thirdLeftByRight);
+  bst->insert(thirdRightByRight);
 
   EXPECT_EQ(bst->getRoot()->getData(), rootValue);
   EXPECT_EQ(bst->getRoot()->getLeft()->getData(), secondLeft);
