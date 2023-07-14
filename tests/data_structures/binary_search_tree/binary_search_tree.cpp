@@ -51,6 +51,19 @@ TEST(bst, insert_by_array_function) {
   EXPECT_EQ(bst->getRoot()->getRight()->getRight()->getData(), array[6]);
 }
 
+TEST(bst, no_adding_duplicate_values) {
+  int array[] = {5, 5, 5, 5, 5, 5, 5};
+  int length = sizeof(array) / sizeof(array[0]);
+
+  Binary_search_tree *bst = new Binary_search_tree();
+
+  bst->insertNodesFromArray(array, length);
+
+  EXPECT_EQ(bst->getRoot()->getData(), array[0]);
+  EXPECT_EQ(bst->getRoot()->getLeft(), nullptr);
+  EXPECT_EQ(bst->getRoot()->getRight(), nullptr);
+}
+
 TEST(bst, get_height_function) {
   int array[] = {50, 30, 70, 20, 40, 60, 80};
   int expectedHeight = 3;
