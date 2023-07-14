@@ -83,6 +83,21 @@ TEST(bst, get_height_function_with_empty_tree) {
   EXPECT_EQ(height, expectedHeight);
 }
 
+TEST(bst, search_node) {
+  int array[] = {50, 30, 70, 20, 40, 60, 80};
+  int length = sizeof(array) / sizeof(array[0]);
+  int valueToSearch = 20;
+
+  Binary_search_tree *bst = new Binary_search_tree();
+
+  bst->insertNodesFromArray(array, length);
+  Node* nodeSearched = bst->search(valueToSearch);
+
+  EXPECT_EQ(nodeSearched->getData(), valueToSearch);
+
+
+}
+
 // TODO (codeDude): Add a test to test the print function
 
 } // namespace

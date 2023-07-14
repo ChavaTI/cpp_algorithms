@@ -76,3 +76,17 @@ void Binary_search_tree::printTree(Node *node, const std::string &prefix,
   this->printTree(node->getLeft(), prefix + (isLeft ? "│   " : "    "), true);
   this->printTree(node->getRight(), prefix + (isLeft ? "│   " : "    "), false);
 }
+
+Node *Binary_search_tree::searchNode(Node *node, int value) {
+  if (node == NULL || node->getData() == value) {
+    return node;
+  }
+  if (value < node->getData()) {
+    return searchNode(node->getLeft(), value);
+  }
+  return searchNode(node->getRight(), value);
+}
+
+Node *Binary_search_tree::search(int value) {
+  return this->searchNode(this->getRoot(), value);
+}

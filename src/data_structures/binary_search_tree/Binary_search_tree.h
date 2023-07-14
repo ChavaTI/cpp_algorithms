@@ -20,6 +20,7 @@ public:
   void insertNodesFromArray(int *array, int length);
   void removeNode();
   Node *search(int value);
+  Node *searchNode(Node *node, int value);
   void preOrderTraverse();
   void inOrderTraverse();
   void postOrderTraverse();
