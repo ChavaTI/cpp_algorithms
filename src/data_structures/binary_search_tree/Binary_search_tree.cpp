@@ -8,41 +8,40 @@ Binary_search_tree::Binary_search_tree(int rootValue) {
   this->root = new Node(rootValue);
 }
 
-void Binary_search_tree::setRoot(Node *newRoot) { this->root = newRoot; }
+void Binary_search_tree::setRoot(Node* node) { this->root = node; }
 
 Node *Binary_search_tree::getRoot() { return this->root; }
 
-void Binary_search_tree::insertNode(int newValue) {
-  Node *newNode = new Node(newValue);
-
-  if (this->root == NULL) {
-    this->root = newNode;
+void Binary_search_tree::insertNode(Node *node, int value) {
+  if (value < node->getData()) {
+    if(node->getLeft() == NULL) {
+      Node* newNode = new Node(value);
+      node->setLeft(newNode);
+    } else {
+      this->insertNode(node->getLeft(), value);
+    }
   } else {
-    Node *currentNode = this->getRoot();
-    while (true) {
-      if (newValue <= currentNode->getData()) {
-        if (currentNode->getLeft() == NULL) {
-          currentNode->setLeft(newNode);
-          break;
-        } else {
-          currentNode = currentNode->getLeft();
-        }
-
-      } else {
-        if (currentNode->getRight() == NULL) {
-          currentNode->setRight(newNode);
-          break;
-        } else {
-          currentNode = currentNode->getRight();
-        }
-      }
+    if(node->getRight() == NULL) {
+      Node* newNode = new Node(value);
+      node->setRight(newNode);
+    } else {
+      this->insertNode(node->getRight(), value);
     }
   }
 }
 
+void Binary_search_tree::insert(int value) {
+  if (this->getRoot() == NULL) {
+    this->setRoot(new Node(value));
+  } else {
+    this->insertNode(this->getRoot(), value);
+  }
+
+}
+
 void Binary_search_tree::insertNodesFromArray(int *array, int length) {
   for (int i = 0; i < length; i++) {
-    this->insertNode(array[i]);
+    this->insert(array[i]);
   }
 }
 

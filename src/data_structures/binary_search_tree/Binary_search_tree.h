@@ -8,14 +8,15 @@ class Binary_search_tree {
 private:
   Node *root;
   int calculateHeight(Node *node);
+  void insertNode(Node* node ,int value);
 
 public:
   Binary_search_tree();
   Binary_search_tree(int rootValue);
 
-  void setRoot(Node* newRoot);
+  void setRoot(Node* node);
   Node* getRoot();
-  void insertNode(int newValue);
+  void insert(int value);
   void insertNodesFromArray(int *array, int length);
   void removeNode();
   Node *search(int value);
