@@ -28,7 +28,8 @@ public:
   int getHeight();
   void printTree(Node *node, const std::string &prefix, bool isLeft);
   void print();
-  Node *getMaximumNode();
+  Node *getMaximumNode(Node *node);
+  int  getMaximumValue();
   Node *getMinimumNode(Node *node);
   int getMinimumValue();
   Node *getPredecesorNode(Node *node);

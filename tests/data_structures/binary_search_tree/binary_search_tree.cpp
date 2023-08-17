@@ -111,6 +111,19 @@ TEST(bst, get_minimum_value) {
   EXPECT_EQ(minimumValue, expectedMinimumValue);
 }
 
+TEST(bst, get_maximum_value) {
+  int array[] = {50, 30, 70, 20, 40, 60, 80};
+  int length = sizeof(array) / sizeof(array[0]);
+  int expectedMaximumValue = 80;
+
+  Binary_search_tree *bst = new Binary_search_tree();
+
+  bst->insertNodesFromArray(array, length);
+  int maximumValue = bst->getMaximumValue();
+
+  EXPECT_EQ(maximumValue, expectedMaximumValue);
+}
+
 TEST(bst, remove_node) {
   int array[] = {50, 30, 70, 20, 40, 60, 80};
   int length = sizeof(array) / sizeof(array[0]);

@@ -102,6 +102,17 @@ Node *Binary_search_tree::getMinimumNode(Node *node) {
   return this->getMinimumNode(node->getLeft());
 }
 
+int Binary_search_tree::getMaximumValue() {
+  return this->getMaximumNode(this->getRoot())->getData();
+}
+
+Node *Binary_search_tree::getMaximumNode(Node *node) {
+  if (node->getRight() == NULL) {
+    return node;
+  }
+  return this->getMaximumNode(node->getRight());
+}
+
 void Binary_search_tree::remove(int value) {
   this->removeNode(this->getRoot(), value);
 }
