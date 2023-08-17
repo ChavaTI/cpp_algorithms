@@ -22,9 +22,6 @@ public:
   void remove(int value);
   Node *search(int value);
   Node *searchNode(Node *node, int value);
-  void preOrderTraverse();
-  void inOrderTraverse();
-  void postOrderTraverse();
   int getHeight();
   void printTree(Node *node, const std::string &prefix, bool isLeft);
   void print();
@@ -32,7 +29,5 @@ public:
   int  getMaximumValue();
   Node *getMinimumNode(Node *node);
   int getMinimumValue();
-  Node *getPredecesorNode(Node *node);
-  Node *getSuccesorNode(Node *node);
 };
 #endif // BINARY_SEARCH_TREE
