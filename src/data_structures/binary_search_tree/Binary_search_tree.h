@@ -18,18 +18,16 @@ public:
   Node *getRoot();
   void insert(int value);
   void insertNodesFromArray(int *array, int length);
-  void removeNode();
+  Node *removeNode(Node *node, int value);
+  void remove(int value);
   Node *search(int value);
   Node *searchNode(Node *node, int value);
-  void preOrderTraverse();
-  void inOrderTraverse();
-  void postOrderTraverse();
   int getHeight();
   void printTree(Node *node, const std::string &prefix, bool isLeft);
   void print();
-  Node *getMaximumNode();
-  Node *getMinimumNode();
-  Node *getPredecesorNode(Node *node);
-  Node *getSuccesorNode(Node *node);
+  Node *getMaximumNode(Node *node);
+  int  getMaximumValue();
+  Node *getMinimumNode(Node *node);
+  int getMinimumValue();
 };
 #endif // BINARY_SEARCH_TREE

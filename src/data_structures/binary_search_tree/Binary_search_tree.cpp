@@ -90,3 +90,56 @@ Node *Binary_search_tree::searchNode(Node *node, int value) {
 Node *Binary_search_tree::search(int value) {
   return this->searchNode(this->getRoot(), value);
 }
+
+int Binary_search_tree::getMinimumValue() {
+  return this->getMinimumNode(this->getRoot())->getData();
+}
+
+Node *Binary_search_tree::getMinimumNode(Node *node) {
+  if (node->getLeft() == NULL) {
+    return node;
+  }
+  return this->getMinimumNode(node->getLeft());
+}
+
+int Binary_search_tree::getMaximumValue() {
+  return this->getMaximumNode(this->getRoot())->getData();
+}
+
+Node *Binary_search_tree::getMaximumNode(Node *node) {
+  if (node->getRight() == NULL) {
+    return node;
+  }
+  return this->getMaximumNode(node->getRight());
+}
+
+void Binary_search_tree::remove(int value) {
+  this->removeNode(this->getRoot(), value);
+}
+
+Node *Binary_search_tree::removeNode(Node *node, int value) {
+  if (node == NULL) {
+    return node;
+  }
+
+  if (value < node->getData()) {
+    node->setLeft(this->removeNode(node->getLeft(), value));
+  } else if (value > node->getData()) {
+    node->setRight(this->removeNode(node->getRight(), value));
+  } else {
+    if(node->getLeft() == NULL) {
+      Node *tmp = node->getRight();
+      delete node;
+      return tmp;
+    } else if (node->getRight() == NULL) {
+      Node *tmp = node->getLeft();
+      delete node;
+      return tmp;
+    }
+
+    Node *tmp = this->getMinimumNode(node->getRight());
+    node->setData(tmp->getData());
+    node->setRight(this->removeNode(node->getRight(), tmp->getData()));
+  }
+  return node;
+}

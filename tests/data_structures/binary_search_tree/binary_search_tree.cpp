@@ -98,6 +98,51 @@ TEST(bst, search_node) {
 
 }
 
+TEST(bst, get_minimum_value) {
+  int array[] = {50, 30, 70, 20, 40, 60, 80};
+  int length = sizeof(array) / sizeof(array[0]);
+  int expectedMinimumValue = 20;
+
+  Binary_search_tree *bst = new Binary_search_tree();
+
+  bst->insertNodesFromArray(array, length);
+  int minimumValue = bst->getMinimumValue();
+
+  EXPECT_EQ(minimumValue, expectedMinimumValue);
+}
+
+TEST(bst, get_maximum_value) {
+  int array[] = {50, 30, 70, 20, 40, 60, 80};
+  int length = sizeof(array) / sizeof(array[0]);
+  int expectedMaximumValue = 80;
+
+  Binary_search_tree *bst = new Binary_search_tree();
+
+  bst->insertNodesFromArray(array, length);
+  int maximumValue = bst->getMaximumValue();
+
+  EXPECT_EQ(maximumValue, expectedMaximumValue);
+}
+
+TEST(bst, remove_node) {
+  int array[] = {50, 30, 70, 20, 40, 60, 80};
+  int length = sizeof(array) / sizeof(array[0]);
+  int valueToRemove = 50;
+
+  Binary_search_tree *bst = new Binary_search_tree();
+
+  bst->insertNodesFromArray(array, length);
+  bst->remove(valueToRemove);
+
+  EXPECT_EQ(bst->getRoot()->getData(), 60);
+  EXPECT_EQ(bst->getRoot()->getLeft()->getData(), 30);
+  EXPECT_EQ(bst->getRoot()->getRight()->getData(), 70);
+  EXPECT_EQ(bst->getRoot()->getLeft()->getLeft()->getData(), 20);
+  EXPECT_EQ(bst->getRoot()->getLeft()->getRight()->getData(), 40);
+  EXPECT_EQ(bst->getRoot()->getRight()->getLeft(), nullptr);
+  EXPECT_EQ(bst->getRoot()->getRight()->getRight()->getData(), 80);
+}
+
 // TODO (codeDude): Add a test to test the print function
 
 } // namespace
