@@ -98,6 +98,20 @@ TEST(bst, search_node) {
 
 }
 
+TEST(bst, search_node_not_found) {
+  int array[] = {50, 30, 70, 20, 40, 60, 80};
+
+  int length = sizeof(array) / sizeof(array[0]);
+  int valueToSearch = 100;
+
+  Binary_search_tree *bst = new Binary_search_tree();
+
+  bst->insertNodesFromArray(array, length);
+  Node* nodeSearched = bst->search(valueToSearch);
+
+  EXPECT_EQ(nodeSearched, nullptr);
+}
+
 TEST(bst, get_minimum_value) {
   int array[] = {50, 30, 70, 20, 40, 60, 80};
   int length = sizeof(array) / sizeof(array[0]);
