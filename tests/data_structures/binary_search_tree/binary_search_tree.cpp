@@ -91,11 +91,9 @@ TEST(bst, search_node) {
   Binary_search_tree *bst = new Binary_search_tree();
 
   bst->insertNodesFromArray(array, length);
-  Node* nodeSearched = bst->search(valueToSearch);
+  Node *nodeSearched = bst->search(valueToSearch);
 
   EXPECT_EQ(nodeSearched->getData(), valueToSearch);
-
-
 }
 
 TEST(bst, search_node_not_found) {
@@ -107,7 +105,7 @@ TEST(bst, search_node_not_found) {
   Binary_search_tree *bst = new Binary_search_tree();
 
   bst->insertNodesFromArray(array, length);
-  Node* nodeSearched = bst->search(valueToSearch);
+  Node *nodeSearched = bst->search(valueToSearch);
 
   EXPECT_EQ(nodeSearched, nullptr);
 }
