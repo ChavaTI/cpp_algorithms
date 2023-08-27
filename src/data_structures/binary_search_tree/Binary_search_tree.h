@@ -11,7 +11,6 @@ private:
   void insertNode(Node *node, int value);
   Node *removeNode(Node *node, int value);
   Node *searchNode(Node *node, int value);
-  void printTree(Node *node, const std::string &prefix, bool isLeft);
   Node *getMaximumNode(Node *node);
   Node *getMinimumNode(Node *node);
 
@@ -26,7 +25,6 @@ public:
   void remove(int value);
   Node *search(int value);
   int getHeight();
-  void print();
   int getMaximumValue();
   int getMinimumValue();
 };

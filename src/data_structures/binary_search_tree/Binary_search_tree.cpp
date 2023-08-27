@@ -1,6 +1,5 @@
 #include "Binary_search_tree.h"
 #include "node/Node.h"
-#include <iostream>
 
 Binary_search_tree::Binary_search_tree() {}
 
@@ -59,24 +58,6 @@ int Binary_search_tree::calculateHeight(Node *node) {
   return (leftHeight > rightHeight) ? leftHeight + 1 : rightHeight + 1;
 }
 
-void Binary_search_tree::print() {
-  this->printTree(this->getRoot(), "", false);
-}
-
-void Binary_search_tree::printTree(Node *node, const std::string &prefix,
-                                   bool isLeft) {
-  if (node == NULL) {
-    return;
-  }
-
-  std::cout << prefix;
-  std::cout << (isLeft ? "├──" : "└──");
-  std::cout << node->getData() << std::endl;
-
-  this->printTree(node->getLeft(), prefix + (isLeft ? "│   " : "    "), true);
-  this->printTree(node->getRight(), prefix + (isLeft ? "│   " : "    "), false);
-}
-
 Node *Binary_search_tree::searchNode(Node *node, int value) {
   if (node == NULL || node->getData() == value) {
     return node;
@@ -127,7 +108,7 @@ Node *Binary_search_tree::removeNode(Node *node, int value) {
   } else if (value > node->getData()) {
     node->setRight(this->removeNode(node->getRight(), value));
   } else {
-    if(node->getLeft() == NULL) {
+    if (node->getLeft() == NULL) {
       Node *tmp = node->getRight();
       delete node;
       return tmp;

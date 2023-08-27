@@ -16,6 +16,7 @@ target_include_directories(
 
   ${DATA_STRUCTURES_DIR}/binary_search_tree
   ${DATA_STRUCTURES_DIR}/binary_search_tree/node
+  ${DATA_STRUCTURES_DIR}/binary_search_tree/bst_printer
 )
 
 target_link_libraries(
@@ -29,6 +30,7 @@ target_link_libraries(
 
   binary_search_tree
   node
+  bst_printer
 )
 
 add_subdirectory(${OPERATOR_DIR})

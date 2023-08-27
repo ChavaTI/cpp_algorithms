@@ -1,2 +1,3 @@
 add_library(binary_search_tree Binary_search_tree.cpp Binary_search_tree.h)
 add_subdirectory(node)
+add_subdirectory(bst_printer)

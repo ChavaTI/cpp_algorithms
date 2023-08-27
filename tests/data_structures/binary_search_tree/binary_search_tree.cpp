@@ -155,6 +155,4 @@ TEST(bst, remove_node) {
   EXPECT_EQ(bst->getRoot()->getRight()->getRight()->getData(), 80);
 }
 
-// TODO (codeDude): Add a test to test the print function
-
 } // namespace
