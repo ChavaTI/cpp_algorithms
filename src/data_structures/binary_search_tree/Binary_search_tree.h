@@ -8,11 +8,6 @@ class Binary_search_tree {
 private:
   Node *root;
   int calculateHeight(Node *node);
-  void insertNode(Node *node, int value);
-  Node *removeNode(Node *node, int value);
-  Node *searchNode(Node *node, int value);
-  Node *getMaximumNode(Node *node);
-  Node *getMinimumNode(Node *node);
 
 public:
   Binary_search_tree();
