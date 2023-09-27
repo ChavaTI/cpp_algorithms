@@ -1,6 +1,6 @@
 #include "Binary_search_tree.h"
+#include "./bst_manipulator/Bst_manipulator.h"
 #include "node/Node.h"
-#include <iostream>
 
 Binary_search_tree::Binary_search_tree() {}
 
@@ -12,29 +12,12 @@ void Binary_search_tree::setRoot(Node *node) { this->root = node; }
 
 Node *Binary_search_tree::getRoot() { return this->root; }
 
-void Binary_search_tree::insertNode(Node *node, int value) {
-  if (value < node->getData()) {
-    if (node->getLeft() == NULL) {
-      Node *newNode = new Node(value);
-      node->setLeft(newNode);
-    } else {
-      this->insertNode(node->getLeft(), value);
-    }
-  } else if (value > node->getData()) {
-    if (node->getRight() == NULL) {
-      Node *newNode = new Node(value);
-      node->setRight(newNode);
-    } else {
-      this->insertNode(node->getRight(), value);
-    }
-  }
-}
 
 void Binary_search_tree::insert(int value) {
   if (this->getRoot() == NULL) {
     this->setRoot(new Node(value));
   } else {
-    this->insertNode(this->getRoot(), value);
+    Bst_manipulator::insertNode(this->getRoot(), value);
   }
 }
 
@@ -59,87 +42,19 @@ int Binary_search_tree::calculateHeight(Node *node) {
   return (leftHeight > rightHeight) ? leftHeight + 1 : rightHeight + 1;
 }
 
-void Binary_search_tree::print() {
-  this->printTree(this->getRoot(), "", false);
-}
-
-void Binary_search_tree::printTree(Node *node, const std::string &prefix,
-                                   bool isLeft) {
-  if (node == NULL) {
-    return;
-  }
-
-  std::cout << prefix;
-  std::cout << (isLeft ? "├──" : "└──");
-  std::cout << node->getData() << std::endl;
-
-  this->printTree(node->getLeft(), prefix + (isLeft ? "│   " : "    "), true);
-  this->printTree(node->getRight(), prefix + (isLeft ? "│   " : "    "), false);
-}
-
-Node *Binary_search_tree::searchNode(Node *node, int value) {
-  if (node == NULL || node->getData() == value) {
-    return node;
-  }
-  if (value < node->getData()) {
-    return searchNode(node->getLeft(), value);
-  }
-  return searchNode(node->getRight(), value);
-}
-
 Node *Binary_search_tree::search(int value) {
-  return this->searchNode(this->getRoot(), value);
+  return Bst_manipulator::searchNode(this->getRoot(), value);
 }
 
 int Binary_search_tree::getMinimumValue() {
-  return this->getMinimumNode(this->getRoot())->getData();
-}
-
-Node *Binary_search_tree::getMinimumNode(Node *node) {
-  if (node->getLeft() == NULL) {
-    return node;
-  }
-  return this->getMinimumNode(node->getLeft());
+  return Bst_manipulator::getMinimumNode(this->getRoot())->getData();
 }
 
 int Binary_search_tree::getMaximumValue() {
-  return this->getMaximumNode(this->getRoot())->getData();
-}
-
-Node *Binary_search_tree::getMaximumNode(Node *node) {
-  if (node->getRight() == NULL) {
-    return node;
-  }
-  return this->getMaximumNode(node->getRight());
+  return Bst_manipulator::getMaximumNode(this->getRoot())->getData();
 }
 
 void Binary_search_tree::remove(int value) {
-  this->removeNode(this->getRoot(), value);
+  Bst_manipulator::removeNode(this->getRoot(), value);
 }
 
-Node *Binary_search_tree::removeNode(Node *node, int value) {
-  if (node == NULL) {
-    return node;
-  }
-
-  if (value < node->getData()) {
-    node->setLeft(this->removeNode(node->getLeft(), value));
-  } else if (value > node->getData()) {
-    node->setRight(this->removeNode(node->getRight(), value));
-  } else {
-    if(node->getLeft() == NULL) {
-      Node *tmp = node->getRight();
-      delete node;
-      return tmp;
-    } else if (node->getRight() == NULL) {
-      Node *tmp = node->getLeft();
-      delete node;
-      return tmp;
-    }
-
-    Node *tmp = this->getMinimumNode(node->getRight());
-    node->setData(tmp->getData());
-    node->setRight(this->removeNode(node->getRight(), tmp->getData()));
-  }
-  return node;
-}
